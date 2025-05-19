@@ -29,10 +29,11 @@ body {
 }
 
 .temp-container {
-  width: 100%;
+  width: 95%;
   padding: 15px;
   font-weight: bold;
   font-size: 18px;
+  overflow:hidden;
 }
 
 .input {
