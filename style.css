@@ -13,7 +13,7 @@ body {
 .container {
   background: rgba(255, 255, 255, 0.3);
   padding: 20px;
-  box-shadow:none; /* 0 4px 10px rgba(0, 0, 0, 0.3);*/
+  box-shadow:none; /* 0 4px 10px rgba(128, 0, 128, 0.3);*/
   border-radius: 10px;
   width: 80%;
   max-width: 450px;
@@ -28,7 +28,7 @@ body {
 
 .heading {
   font-size: 32px;
-  font-color: #301934;
+  font-color: Purple;
 }
 
 .temp-container {
