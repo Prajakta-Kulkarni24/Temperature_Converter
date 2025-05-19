@@ -55,4 +55,5 @@ body {
 
 .input::placeholder{
     color: Purple;
+    opacity:0.5;
 }
