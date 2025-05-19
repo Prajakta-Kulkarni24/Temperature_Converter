@@ -6,7 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: arial;
-  font-color: Purple; 
+  font-color: Violet; 
   overflow:hidden;
 }
 
@@ -21,21 +21,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-color:Purple;
+  font-color: Violet;
   position:fixed;
   overflow:hidden;
 }
 
 .heading {
   font-size: 32px;
-  font-color: Purple;
+  font-color: Violet;
 }
 
 .temp-container {
   width: 95%;
   padding: 15px;
   font-weight: bold;
-  font-color: Purple ; 
+  font-color: Violet ; 
   font-size: 18px;
   overflow:hidden;
 }
@@ -48,7 +48,7 @@ body {
   outline: none;
   background: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.5);
-  color:Purple;
+  color: Violet;
   font-size: 18px;
       
 }
