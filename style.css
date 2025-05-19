@@ -21,19 +21,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-color:Purple;
   position:fixed;
   overflow:hidden;
 }
 
 .heading {
   font-size: 32px;
-  color:DarkMagneto;
+  font-color:DarkMagneto;
 }
 
 .temp-container {
   width: 95%;
   padding: 15px;
   font-weight: bold;
+  font-color:DarkMagneto;
   font-size: 18px;
   overflow:hidden;
 }
