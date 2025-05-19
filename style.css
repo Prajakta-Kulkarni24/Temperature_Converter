@@ -6,7 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: arial;
-  font-color: DarkMagneto; 
+  font-color: Purple; 
   overflow:hidden;
 }
 
@@ -28,14 +28,14 @@ body {
 
 .heading {
   font-size: 32px;
-  font-color:DarkMagneto;
+  font-color: #301934;
 }
 
 .temp-container {
   width: 95%;
   padding: 15px;
   font-weight: bold;
-  font-color:DarkMagneto;
+  font-color: purple;
   font-size: 18px;
   overflow:hidden;
 }
