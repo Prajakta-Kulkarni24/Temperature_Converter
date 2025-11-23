@@ -45,4 +45,4 @@ keys.forEach(key => {
             input.value += key.textContent;
         }
     });
-}); 
+});
