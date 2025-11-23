@@ -1,44 +1,57 @@
-* {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    margin: 0;
+    font-family: Arial, sans-serif;
     background: linear-gradient(to right, #6dd5ed, #2193b0);
     color: #fff;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Header styling - clearly visible */
+/* Sticky header */
 header {
     width: 100%;
     text-align: center;
     font-size: 2em;
     font-weight: bold;
-    margin-bottom: 20px;
-    background-color: #000000cc; /* Dark, semi-opaque background */
-    padding: 20px;
-    border-radius: 10px;
+    background-color: #000000cc; /* Dark background */
+    padding: 20px 0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
-/* Main content styling */
-main {
+/* Sticky footer */
+footer {
     width: 100%;
+    text-align: center;
+    font-size: 1em;
+    background-color: #000000cc; /* Dark background */
+    padding: 20px 0;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* Main content area with spacing for header/footer */
+main {
+    flex: 1;
+    margin-top: 100px;  /* Height of header */
+    margin-bottom: 80px; /* Height of footer */
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding: 0 10px;
 }
 
-/* Input field with centered numbers */
+/* Input field centered numbers */
 input {
     padding: 12px;
     margin: 5px 0;
@@ -46,7 +59,7 @@ input {
     border-radius: 5px;
     border: none;
     font-size: 1.5em;
-    text-align: center; /* Centered numbers */
+    text-align: center;
 }
 
 select, button {
@@ -70,7 +83,6 @@ button#convertBtn:hover {
     background-color: #ffcc70;
 }
 
-/* Result display */
 .result {
     margin: 15px 0;
     font-size: 1.3em;
@@ -82,11 +94,11 @@ button#convertBtn:hover {
 /* Keyboard styling */
 .keyboard {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    width: 90%;          /* Full width */
-    max-width: 400px;    /* Optional max width */
-    margin: 10px auto 0; /* Center horizontally */
+    width: 90%;
+    max-width: 400px;
+    margin-top: 10px;
 }
 
 .keyboard .key {
@@ -97,15 +109,9 @@ button#convertBtn:hover {
     color: #fff;
     border: none;
     cursor: pointer;
-    transition: 0.2s;
-    text-align: center; /* Number centered inside button */
+    text-align: center;
 }
 
-.keyboard .key:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-/* Clear button full row */
 #clear {
     grid-column: span 3;
     background-color: #ff6666;
@@ -113,19 +119,6 @@ button#convertBtn:hover {
 
 #clear:hover {
     background-color: #ff4c4c;
-}
-
-/* Footer styling - clearly visible */
-footer {
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    font-size: 1em;
-    margin-top: 20px;
-    background-color: #000000cc; /* Dark, semi-opaque background */
-    border-radius: 10px;
-    box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
-    color: #fff;
 }
 
 @media(max-width: 500px) {
