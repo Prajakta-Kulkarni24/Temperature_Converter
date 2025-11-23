@@ -1,46 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Temperature Converter </title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="heading">Temperature Converter </h1>
-      <div class="temp-container">
-        <label for="celsius">Celsius:</label>
-        <input
-          onchange="computeTemp(event)"
-          type="number"
-          name="celsius"
-          id="celsius"
-          class="input"
-        />
-      </div>
-      <div class="temp-container">
-        <label for="fahrenheit">Fahrenheit:</label>
-        <input
-          onchange="computeTemp(event)"
-          type="number"
-          name="fahrenheit"
-          id="fahrenheit"
-          class="input"
-        />
-      </div>
-      <div class="temp-container">
-        <label for="kelvin">Kelvin:</label>
-        <input
-          onchange="computeTemp(event)"
-          type="number"
-          name="kelvin"
-          id="kelvin"
-          class="input"
-        />
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0" />
+  <title>Temperature Converter</title>
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h2><span class="material-icons">device_thermostat</span> Temp App</h2>
+
+    <button class="dark-btn" onclick="toggleDarkMode()">
+      <span class="material-icons">dark_mode</span>
+    </button>
+  </header>
+
+  <!-- BOTTOM STICKY TEMPERATURE CONVERTER -->
+  <div class="container">
+
+    <h1 class="heading"><span class="material-icons">compare_arrows</span> Temperature Converter</h1>
+
+    <div id="error" class="error"></div>
+
+    <div class="temp-container">
+      <label>Celsius (°C):</label>
+      <input oninput="computeTemp(event)" type="number" id="celsius" class="input" />
     </div>
-    <script src="script.js"></script>
-  </body>
+
+    <div class="temp-container">
+      <label>Fahrenheit (°F):</label>
+      <input oninput="computeTemp(event)" type="number" id="fahrenheit" class="input" />
+    </div>
+
+    <div class="temp-container">
+      <label>Kelvin (K):</label>
+      <input oninput="computeTemp(event)" type="number" id="kelvin" class="input" />
+    </div>
+
+    <button class="reset-btn" onclick="resetAll()">
+      <span class="material-icons">refresh</span> Reset
+    </button>
+
+    <button class="manual-btn" onclick="manualConvert()">
+      <span class="material-icons">sync</span> Convert
+    </button>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 My Temperature App</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
