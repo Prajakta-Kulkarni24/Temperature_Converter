@@ -1,24 +1,65 @@
-const celsiusEl = document.getElementById("celsius");
-const fahrenheitEl = document.getElementById("fahrenheit");
-const kelvinEl = document.getElementById("kelvin");
-
 function computeTemp(event) {
-  const currentValue = +event.target.value;
+  const value = parseFloat(event.target.value);
+  const id = event.target.id;
 
-  switch (event.target.name) {
-    case "celsius":
-      kelvinEl.value = (currentValue + 273.32).toFixed(2);
-      fahrenheitEl.value = (currentValue * 1.8 + 32).toFixed(2);
-      break;
-    case "fahrenheit":
-      celsiusEl.value = ((currentValue - 32) / 1.8).toFixed(2);
-      kelvinEl.value = ((currentValue - 32) / 1.8 + 273.32).toFixed(2);
-      break;
-    case "kelvin":
-      celsiusEl.value = (currentValue - 273.32).toFixed(2);
-      fahrenheitEl.value = ((currentValue - 273.32) * 1.8 + 32).toFixed(2);
-      break;
-    default:
-      break;
+  const c = document.getElementById("celsius");
+  const f = document.getElementById("fahrenheit");
+  const k = document.getElementById("kelvin");
+  const error = document.getElementById("error");
+
+  error.textContent = ""; // Clear previous error
+
+  // Empty input clears all
+  if (event.target.value.trim() === "") {
+    c.value = "";
+    f.value = "";
+    k.value = "";
+    return;
   }
+
+  // Kelvin cannot be below 0
+  if (id === "kelvin" && value < 0) {
+    error.textContent = "❌ Kelvin cannot be negative!";
+    k.value = "";
+    return;
+  }
+
+  // Vibration on value change (mobile)
+  if (navigator.vibrate) {
+    navigator.vibrate(20);
+  }
+
+  // Conversion logic
+  if (id === "celsius") {
+    f.value = (value * 9/5 + 32).toFixed(2);
+    k.value = (value + 273.15).toFixed(2);
+  }
+
+  if (id === "fahrenheit") {
+    c.value = ((value - 32) * 5/9).toFixed(2);
+    k.value = (((value - 32) * 5/9) + 273.15).toFixed(2);
+  }
+
+  if (id === "kelvin") {
+    c.value = (value - 273.15).toFixed(2);
+    f.value = ((value - 273.15) * 9/5 + 32).toFixed(2);
+  }
+}
+
+/* Manual Convert Button */
+function manualConvert() {
+  computeTemp({ target: document.activeElement });
+}
+
+/* Reset Button */
+function resetAll() {
+  document.getElementById("celsius").value = "";
+  document.getElementById("fahrenheit").value = "";
+  document.getElementById("kelvin").value = "";
+  document.getElementById("error").textContent = "";
+}
+
+/* Dark Mode */
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
 }
