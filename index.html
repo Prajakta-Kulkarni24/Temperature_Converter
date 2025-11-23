@@ -1,61 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature Converter</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="app-header">
-    <h1>Temperature Converter</h1>
-    <button id="modeToggle">🌙</button>
-</header>
+    <header>🌡 Temperature Converter</header>
 
-<div class="container">
+    <main>
+        <div class="converter">
+            <input type="text" id="temperature" placeholder="Enter temperature" readonly>
+            
+            <select id="fromUnit">
+                <option value="C">Celsius (°C)</option>
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="K">Kelvin (K)</option>
+            </select>
 
-    <div class="temp-box">
-        <label>Celsius (°C)</label>
-        <input type="text" id="celsius" readonly onclick="setActive('celsius')" />
-    </div>
+            <select id="toUnit">
+                <option value="C">Celsius (°C)</option>
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="K">Kelvin (K)</option>
+            </select>
 
-    <div class="temp-box">
-        <label>Fahrenheit (°F)</label>
-        <input type="text" id="fahrenheit" readonly onclick="setActive('fahrenheit')" />
-    </div>
+            <button id="convertBtn">Convert</button>
 
-    <div class="temp-box">
-        <label>Kelvin (K)</label>
-        <input type="text" id="kelvin" readonly onclick="setActive('kelvin')" />
-        <small id="kelvin-error"></small>
-    </div>
+            <div class="result" id="result"></div>
 
-    <button class="reset-btn" onclick="resetAll()">Reset</button>
+            <div class="keyboard">
+                <button class="key">1</button>
+                <button class="key">2</button>
+                <button class="key">3</button>
+                <button class="key">4</button>
+                <button class="key">5</button>
+                <button class="key">6</button>
+                <button class="key">7</button>
+                <button class="key">8</button>
+                <button class="key">9</button>
+                <button class="key">0</button>
+                <button class="key">.</button>
+                <button class="key" id="clear">C</button>
+                <button class="key" id="delete">⌫</button>
+            </div>
+        </div>
+    </main>
 
-</div>
+    <footer>
+        <p>🌡 Temperature Converter | Developed by Prajakta Kulkarni | © 2025</p>
+        <p>Contact: <a href="mailto: prajaktavk2004@gmail.com@gmail.com">prajaktavk2004@gmail.com@gmail.com</a></p>
+    </footer>
 
-<!-- ON-SCREEN KEYBOARD -->
-<div class="keyboard">
-    <button onclick="press('1')">1</button>
-    <button onclick="press('2')">2</button>
-    <button onclick="press('3')">3</button>
-    <button onclick="press('4')">4</button>
-    <button onclick="press('5')">5</button>
-    <button onclick="press('6')">6</button>
-    <button onclick="press('7')">7</button>
-    <button onclick="press('8')">8</button>
-    <button onclick="press('9')">9</button>
-    <button onclick="press('.')">.</button>
-    <button onclick="press('0')">0</button>
-    <button onclick="backspace()">⌫</button>
-    <button class="clear-btn" onclick="clearInput()">Clear</button>
-</div>
-
-<footer class="app-footer">
-    © 2025 Temperature Converter
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
