@@ -1,65 +1,124 @@
-let active = "celsius";
-
-function setActive(id) {
-    active = id;
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-function press(num) {
-    let box = document.getElementById(active);
-    box.value += num;
-    convert(active);
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
 }
 
-function backspace() {
-    let box = document.getElementById(active);
-    box.value = box.value.slice(0, -1);
-    convert(active);
+header {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+    font-size: 2em;
+    font-weight: bold;
 }
 
-function clearInput() {
-    document.getElementById(active).value = "";
-    convert(active);
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-function convert(type) {
-    let c = document.getElementById("celsius");
-    let f = document.getElementById("fahrenheit");
-    let k = document.getElementById("kelvin");
-    let error = document.getElementById("kelvin-error");
+.converter {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 300px;
+}
 
-    error.textContent = "";
+input, select, button {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+}
 
-    let cv = parseFloat(c.value);
-    let fv = parseFloat(f.value);
-    let kv = parseFloat(k.value);
+input {
+    text-align: right;
+    font-size: 1.2em;
+}
 
-    if (type === "celsius") {
-        if (isNaN(cv)) return f.value = k.value = "";
-        f.value = ((cv * 9/5) + 32).toFixed(2);
-        k.value = (cv + 273.15).toFixed(2);
+button#convertBtn {
+    cursor: pointer;
+    background-color: #ffb347;
+    color: #000;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button#convertBtn:hover {
+    background-color: #ffcc70;
+}
+
+.result {
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.keyboard .key {
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.keyboard .key:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+footer {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #ffcc70;
+}
+
+@media(max-width: 500px) {
+    .converter {
+        padding: 15px;
+        min-width: 250px;
     }
 
-    if (type === "fahrenheit") {
-        if (isNaN(fv)) return c.value = k.value = "";
-        c.value = ((fv - 32) * 5/9).toFixed(2);
-        k.value = (parseFloat(c.value) + 273.15).toFixed(2);
-    }
-
-    if (type === "kelvin") {
-        if (kv < 0) return error.textContent = "Kelvin cannot be negative!";
-        if (isNaN(kv)) return c.value = f.value = "";
-        c.value = (kv - 273.15).toFixed(2);
-        f.value = ((c.value * 9/5) + 32).toFixed(2);
+    .keyboard .key {
+        padding: 12px;
+        font-size: 1em;
     }
 }
-
-function resetAll() {
-    celsius.value = "";
-    fahrenheit.value = "";
-    kelvin.value = "";
-}
-
-/* DARK MODE */
-document.getElementById("modeToggle").onclick = () => {
-    document.body.classList.toggle("dark");
-};
