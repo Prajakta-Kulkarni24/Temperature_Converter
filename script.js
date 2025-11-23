@@ -31,7 +31,7 @@ document.getElementById('convertBtn').addEventListener('click', function() {
     document.getElementById('result').innerText = result;
 });
 
-// Custom keyboard
+// Custom on-screen keyboard
 const keys = document.querySelectorAll('.keyboard .key');
 const input = document.getElementById('temperature');
 
