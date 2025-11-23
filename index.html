@@ -11,41 +11,39 @@
     <header>🌡 Temperature Converter</header>
 
     <main>
-        <div class="converter">
-            <input type="text" id="temperature" placeholder="Enter temperature" readonly>
-            
-            <select id="fromUnit">
-                <option value="C">Celsius (°C)</option>
-                <option value="F">Fahrenheit (°F)</option>
-                <option value="K">Kelvin (K)</option>
-            </select>
+        <input type="text" id="temperature" placeholder="Enter temperature" readonly>
 
-            <select id="toUnit">
-                <option value="C">Celsius (°C)</option>
-                <option value="F">Fahrenheit (°F)</option>
-                <option value="K">Kelvin (K)</option>
-            </select>
+        <select id="fromUnit">
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+        </select>
 
-            <button id="convertBtn">Convert</button>
+        <select id="toUnit">
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+        </select>
 
-            <div class="result" id="result"></div>
+        <button id="convertBtn">Convert</button>
 
-            <div class="keyboard">
-                <!-- Numeric keypad layout -->
-                <button class="key">7</button>
-                <button class="key">8</button>
-                <button class="key">9</button>
-                <button class="key">4</button>
-                <button class="key">5</button>
-                <button class="key">6</button>
-                <button class="key">1</button>
-                <button class="key">2</button>
-                <button class="key">3</button>
-                <button class="key">0</button>
-                <button class="key">.</button>
-                <button class="key" id="delete">⌫</button>
-                <button class="key" id="clear">C</button>
-            </div>
+        <div class="result" id="result"></div>
+
+        <div class="keyboard">
+            <!-- Numeric keypad layout -->
+            <button class="key">7</button>
+            <button class="key">8</button>
+            <button class="key">9</button>
+            <button class="key">4</button>
+            <button class="key">5</button>
+            <button class="key">6</button>
+            <button class="key">1</button>
+            <button class="key">2</button>
+            <button class="key">3</button>
+            <button class="key">0</button>
+            <button class="key">.</button>
+            <button class="key" id="delete">⌫</button>
+            <button class="key" id="clear">C</button>
         </div>
     </main>
 
