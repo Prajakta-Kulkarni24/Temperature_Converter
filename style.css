@@ -31,18 +31,24 @@ main {
     align-items: center;
 }
 
-input, select, button {
+/* Input field with centered numbers */
+input {
+    padding: 12px;
+    margin: 5px 0;
+    width: 90%;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.5em;
+    text-align: center; /* Centered numbers */
+}
+
+select, button {
     padding: 12px;
     margin: 5px 0;
     width: 90%;
     border-radius: 5px;
     border: none;
     font-size: 1.2em;
-}
-
-/* Center the numbers when typing */
-input {
-    text-align: center;
 }
 
 button#convertBtn {
@@ -65,12 +71,14 @@ button#convertBtn:hover {
     width: 90%;
 }
 
+/* Keyboard styling */
 .keyboard {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     gap: 10px;
-    width: 90%;
-    margin-top: 10px;
+    width: 90%;          /* Full width of main content */
+    max-width: 400px;    /* Optional max width */
+    margin: 10px auto 0; /* Center horizontally */
 }
 
 .keyboard .key {
@@ -82,12 +90,14 @@ button#convertBtn:hover {
     border: none;
     cursor: pointer;
     transition: 0.2s;
+    text-align: center; /* Number centered inside button */
 }
 
 .keyboard .key:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
+/* Clear button full row */
 #clear {
     grid-column: span 3;
     background-color: #ff6666;
