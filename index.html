@@ -8,46 +8,54 @@
 </head>
 <body>
 
-<!-- APP HEADER -->
 <header class="app-header">
     <h1>Temperature Converter</h1>
     <button id="modeToggle">🌙</button>
 </header>
 
-<!-- MAIN APP AREA -->
-<div class="app-screen">
+<div class="container">
 
-    <div class="panel">
-
-        <div class="temp-box">
-            <label>Celsius (°C)</label>
-            <input type="number" id="celsius" oninput="convert('celsius')" />
-        </div>
-
-        <div class="temp-box">
-            <label>Fahrenheit (°F)</label>
-            <input type="number" id="fahrenheit" oninput="convert('fahrenheit')" />
-        </div>
-
-        <div class="temp-box">
-            <label>Kelvin (K)</label>
-            <input type="number" id="kelvin" oninput="convert('kelvin')" />
-            <small id="kelvin-error"></small>
-        </div>
-
-        <button class="reset-btn" onclick="resetAll()">Reset</button>
-
+    <div class="temp-box">
+        <label>Celsius (°C)</label>
+        <input type="text" id="celsius" readonly onclick="setActive('celsius')" />
     </div>
+
+    <div class="temp-box">
+        <label>Fahrenheit (°F)</label>
+        <input type="text" id="fahrenheit" readonly onclick="setActive('fahrenheit')" />
+    </div>
+
+    <div class="temp-box">
+        <label>Kelvin (K)</label>
+        <input type="text" id="kelvin" readonly onclick="setActive('kelvin')" />
+        <small id="kelvin-error"></small>
+    </div>
+
+    <button class="reset-btn" onclick="resetAll()">Reset</button>
+
 </div>
 
-<!-- APP FOOTER -->
+<!-- ON-SCREEN KEYBOARD -->
+<div class="keyboard">
+    <button onclick="press('1')">1</button>
+    <button onclick="press('2')">2</button>
+    <button onclick="press('3')">3</button>
+    <button onclick="press('4')">4</button>
+    <button onclick="press('5')">5</button>
+    <button onclick="press('6')">6</button>
+    <button onclick="press('7')">7</button>
+    <button onclick="press('8')">8</button>
+    <button onclick="press('9')">9</button>
+    <button onclick="press('.')">.</button>
+    <button onclick="press('0')">0</button>
+    <button onclick="backspace()">⌫</button>
+    <button class="clear-btn" onclick="clearInput()">Clear</button>
+</div>
+
 <footer class="app-footer">
-    <div class="nav-btn">Home</div>
-    <div class="nav-btn">Convert</div>
-    <div class="nav-btn">Settings</div>
+    © 2025 Temperature Converter
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
