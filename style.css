@@ -16,14 +16,19 @@ body {
     padding: 20px;
 }
 
+/* Header styling */
 header {
     width: 100%;
     text-align: center;
-    font-size: 1em;
+    font-size: 2em;
     font-weight: bold;
     margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Distinct background */
+    padding: 15px 0;
+    border-radius: 10px;
 }
 
+/* Main content styling */
 main {
     width: 100%;
     display: flex;
@@ -63,6 +68,7 @@ button#convertBtn:hover {
     background-color: #ffcc70;
 }
 
+/* Result display */
 .result {
     margin: 15px 0;
     font-size: 1.3em;
@@ -76,7 +82,7 @@ button#convertBtn:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     gap: 10px;
-    width: 90%;          /* Full width of main content */
+    width: 90%;          /* Full width */
     max-width: 400px;    /* Optional max width */
     margin: 10px auto 0; /* Center horizontally */
 }
@@ -107,12 +113,15 @@ button#convertBtn:hover {
     background-color: #ff4c4c;
 }
 
+/* Footer styling */
 footer {
     width: 100%;
-    padding: 15px;
+    padding: 15px 0;
     text-align: center;
     font-size: 0.9em;
     margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Distinct background */
+    border-radius: 10px;
 }
 
 @media(max-width: 500px) {
