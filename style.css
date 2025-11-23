@@ -13,24 +13,24 @@ body {
     color: #fff;
 }
 
-/* Header fully filled edge-to-edge */
+/* Header styling - slightly different from background */
 header {
-    width: 100vw; /* full viewport width */
+    width: 100vw;
     text-align: center;
     font-size: 2em;
     font-weight: bold;
     padding: 20px 0;
-    background-color: #000000cc;
+    background: rgba(33, 147, 176, 0.8); /* slightly darker */
     color: #fff;
 }
 
-/* Footer fully filled edge-to-edge */
+/* Footer styling - slightly different from background */
 footer {
-    width: 100vw; /* full viewport width */
+    width: 100vw;
     text-align: center;
     font-size: 1em;
     padding: 20px 0;
-    background-color: #000000cc;
+    background: rgba(33, 147, 176, 0.8); /* slightly darker */
     color: #fff;
 }
 
@@ -107,6 +107,11 @@ button#convertBtn:hover {
     text-align: center;
 }
 
+.keyboard .key:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Clear button full row */
 #clear {
     grid-column: span 3;
     background-color: #ff6666;
